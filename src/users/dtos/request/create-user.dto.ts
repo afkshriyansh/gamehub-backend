@@ -1,22 +1,44 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { IsArray, IsEmail, IsNotEmpty, IsOptional, IsString } from 'class-validator';
+import {
+  IsArray,
+  IsEmail,
+  IsNotEmpty,
+  IsOptional,
+  IsString,
+} from 'class-validator';
 
 export class CreateUserDto {
-  @ApiProperty({ example: 'shriyansh' })
+  @ApiProperty({
+    title: 'Username given by the user. Should be unique.',
+    example: 'shriyansh',
+    type: String,
+  })
   @IsString()
   @IsNotEmpty()
   userName: string;
 
-  @ApiProperty({ example: 'shriyansh@gmail.com' })
+  @ApiProperty({
+    title: 'Email Id of the user.',
+    example: 'shriyansh@gmail.com',
+    type: String,
+  })
   @IsEmail()
   email: string;
 
-  @ApiPropertyOptional({ example: 'Gamer & dev' })
+  @ApiPropertyOptional({
+    title: 'Small description regarding the user.',
+    example: 'Gamer & dev',
+    type: String,
+  })
   @IsOptional()
   @IsString()
   bio?: string;
 
-  @ApiPropertyOptional({ example: ['PS5', 'PC'] })
+  @ApiPropertyOptional({
+    title: 'Platforms user is active on.',
+    example: ['PS5', 'PC'],
+    type: [String],
+  })
   @IsOptional()
   @IsArray()
   platforms?: string[];
