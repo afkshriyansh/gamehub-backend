@@ -14,12 +14,12 @@ export class UpdateUserDto {
     title: 'Username',
     type: String,
     example: 'shriyansh',
-    description: 'Public username of the gamer',
+    description: 'Public userName of the gamer',
   })
   @IsOptional()
   @IsString()
   @IsNotEmpty()
-  username?: string;
+  userName?: string;
 
   @ApiPropertyOptional({
     title: 'Email',
