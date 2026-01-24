@@ -29,7 +29,7 @@ export class GetUsersDto {
   @IsOptional()
   @IsArray()
   @IsString({ each: true })
-  userNames?: string[];
+  usernames?: string[];
 
   @ApiPropertyOptional({
     title: 'Platforms',

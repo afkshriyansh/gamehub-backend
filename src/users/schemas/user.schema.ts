@@ -4,13 +4,13 @@ import { UserStatus } from '../enums';
 
 export type UserDocument = User & Document;
 
-@Schema({ timestamps: true })
+@Schema({ timestamps: true, versionKey: false })
 export class User {
   @Prop({ required: true, index: true })
   userId: string; // UUID (stable identity)
 
   @Prop({ required: true })
-  userName: string;
+  username: string;
 
   @Prop()
   bio?: string;

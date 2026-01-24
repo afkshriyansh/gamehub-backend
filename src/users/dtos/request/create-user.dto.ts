@@ -15,7 +15,7 @@ export class CreateUserDto {
   })
   @IsString()
   @IsNotEmpty()
-  userName: string;
+  username: string;
 
   @ApiProperty({
     title: 'Email Id of the user.',
