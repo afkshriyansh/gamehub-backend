@@ -138,7 +138,10 @@ export class UsersService {
     }
 
     if (request?.usernames?.length) {
-      query.usernames = { $in: request.usernames };
+      query.username = {
+        $regex: request.usernames,
+        $options: 'i',
+      };
     }
 
     return this.userModel.find(query).exec();

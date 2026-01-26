@@ -1,4 +1,4 @@
-export enum UserStatus {
+export enum GameStatus {
   ACTIVE = 'Active',
   INACTIVE = 'Inactive',
   SUSPENDED = 'Suspended',
